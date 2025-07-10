@@ -1,5 +1,3 @@
-# chunk_embed_index.py
-
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -21,7 +19,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 #Prepare ChromaDB Client
-CHROMA_DIR = "vector_store"
+CHROMA_DIR = "../vector_store"
 client = chromadb.PersistentClient(path=CHROMA_DIR)
 collection = client.get_or_create_collection(name="complaints")
 
